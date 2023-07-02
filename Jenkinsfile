@@ -12,12 +12,6 @@ pipeline {
         timestamps()
     }
 
-    environment {
-        ANSIBLE_FORCE_COLOR = 'true'
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-ansible-key')
-        SSH_KEY_NAME = "${WORKSPACE}/gpec-svcs-ansible-ssh-key"
-    }
-
     stages {
         stage('Initialisation') {
             steps {
