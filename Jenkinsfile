@@ -10,6 +10,7 @@ pipeline {
             steps {
                 dir('ansible') {
                     script {
+                        sh "rm -rf gcp*"
                         sh "git clone ${params.REPO_URL}"
                     }
                 }
